@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
   <title>SlideShow</title>
   <style>
     html {
@@ -33,13 +34,15 @@
     .slideshow__slide-img {
       height: 100%;
       opacity: 0;
+      transition-property: opacity, -webkit-transform;
       transition-property: opacity, transform;
       transition-duration: 3s, 10s;
     }
 
     .has-kenBurnsFx {
       opacity: 1;
-      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
     }
 
   </style>
