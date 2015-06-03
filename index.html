@@ -68,6 +68,20 @@
 
     slides[0].querySelector('.slideshow__slide-img').classList.add('has-kenBurnsFx')
 
+    // Randomize transform origin
+    var yAxisOrigins = ['bottom', 'center', 'top']
+    var xAxisOrigins = ['left', 'center', 'right']
+
+    function getRandomElement(array) {
+      return array[Math.floor(Math.random() * array.length)]
+    }
+
+    ;[].forEach.call(slides, function(slide) {
+      xAxisOrigin = getRandomElement(xAxisOrigins)
+      yAxisOrigin = getRandomElement(yAxisOrigins)
+      slide.querySelector('.slideshow__slide-img').style.transformOrigin = '' + xAxisOrigin + ' ' + yAxisOrigin
+    })
+
     function changeSlide(slides) {
       if (curSlideNum + 1 === slides.length) {
         curSlideNum = 0
