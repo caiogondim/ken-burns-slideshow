@@ -23,19 +23,25 @@
     }
 
     .slideshow__slide {
-      width: 100%;
+      height: 100%;
       position: absolute;
       left: 50%;
       margin-left: -50%;
+      overflow: hidden;
     }
 
     .slideshow__slide-img {
-      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition-property: opacity, transform;
+      transition-duration: 3s, 10s;
     }
 
-    .is-visible {
-
+    .has-kenBurnsFx {
+      opacity: 1;
+      transform: scale(1.1);
     }
+
   </style>
 </head>
 <body>
@@ -58,25 +64,25 @@
   </ul>
   <script>
     var slides = document.querySelectorAll('.slideshow__slide')
-    var slidesArrangement = [] // [5, 4, 3, 2, 1], [3, 2, 1, 5, 4], ...
+    var curSlideNum = 0
 
-    //
-    for (var i = slides.length; i > 0; i--) {
-      slidesArrangement.push(i)
-    }
+    slides[0].querySelector('.slideshow__slide-img').classList.add('has-kenBurnsFx')
 
-    function changeSlide(slides, slidesArrangement) {
-      slidesArrangement.unshift(slidesArrangement.pop())
+    function changeSlide(slides) {
+      if (curSlideNum + 1 === slides.length) {
+        curSlideNum = 0
+      } else {
+        curSlideNum += 1
+      }
 
-      ;[].forEach.call(slides, function(slide, index) {
-        slide.style.zIndex = slidesArrangement[index]
-      })
+      document.querySelector('.has-kenBurnsFx').classList.remove('has-kenBurnsFx')
+      slides[curSlideNum].querySelector('.slideshow__slide-img').classList.add('has-kenBurnsFx')
     }
 
     //
     var interval = setInterval(
-      changeSlide.bind(this, slides, slidesArrangement),
-      1000
+      changeSlide.bind(this, slides),
+      5000
     )
   </script>
 </body>
