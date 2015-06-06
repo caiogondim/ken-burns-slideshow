@@ -1,5 +1,8 @@
 'use strict'
 
+var fs = require('fs')
+var insertCss = require('insert-css')
+
 // Class
 // -----
 
@@ -22,6 +25,7 @@ function KenBurnsSlideshow (props) {
 // ------
 
 KenBurnsSlideshow.prototype.init = function init () {
+  injectCss(this.props.cssPrefix)
   injectHtml(this.props.el, this.props.cssPrefix)
   randomizeEffectOrigin(this.props.el, this.props.cssPrefix)
   
@@ -67,6 +71,12 @@ function injectHtml (el, cssPrefix) {
     }
     img.classList.add(cssPrefix + '__slide-img')
   })
+}
+
+function injectCss (cssPrefix) {
+  var css = fs.readFileSync(__dirname + '/style.tmpl.css')
+  css = css.toString().replace(/{{prefix}}/g, cssPrefix)
+  insertCss(css)
 }
 
 function randomizeEffectOrigin (el, cssPrefix) {

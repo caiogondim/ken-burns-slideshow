@@ -1,0 +1,40 @@
+html {
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.{{prefix}} {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.{{prefix}}__slide {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -50%;
+  overflow: hidden;
+}
+
+.{{prefix}}__slide-img {
+  height: 100%;
+  opacity: 0;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-duration: 3s, 10s;
+}
+
+.{{prefix}}--has-kenBurnsFx {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}

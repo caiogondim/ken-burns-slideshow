@@ -14,9 +14,9 @@ gulp.task('build', function () {
         entries: ['src/expose-to-window.js'],
         debug: true
     })
+        .transform('brfs')
         .bundle()
         .pipe(sourceStream('ken-burns-slideshow.global.min.js'))
         .pipe(buffer())
-        // .pipe(rename('ken-burns-slideshow.global.min.js'))
         .pipe(gulp.dest('dist/'))
 })
