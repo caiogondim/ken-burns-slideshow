@@ -1,0 +1,30 @@
+{
+  "name": "ken-burns-slideshow",
+  "version": "1.0.0",
+  "description": "<img src=\"http://rawgit.com/caiogondim/ken-burns-slideshow/master/img/logo/logo.svg\">",
+  "main": "dist/ken-burns-slideshow.min.js",
+  "scripts": {
+    "test": "npm test",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caiogondim/ken-burns-slideshow.git"
+  },
+  "keywords": [
+    "slideshow",
+    "ken",
+    "burns"
+  ],
+  "author": "Caio Gondim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/caiogondim/ken-burns-slideshow/issues"
+  },
+  "homepage": "https://github.com/caiogondim/ken-burns-slideshow#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0"
+  }
+}
