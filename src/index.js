@@ -92,7 +92,7 @@ function randomizeEffectOrigin (el, cssPrefix) {
     var yAxisOrigin = getRandomElement(yAxisOrigins)
     
     slide.style.transformOrigin =
-      '' + xAxisOrigin + ' ' + yAxisOrigins
+      '' + xAxisOrigin + ' ' + yAxisOrigin
   })
 }
 
