@@ -25,7 +25,7 @@ function KenBurnsSlideshow (props) {
 // ------
 
 KenBurnsSlideshow.prototype.init = function init () {
-  injectCss(this.props.cssPrefix)
+  injectCss(this.props.cssPrefix, this.props.transitionDelay)
   injectHtml(this.props.el, this.props.cssPrefix)
   randomizeEffectOrigin(this.props.el, this.props.cssPrefix)
   
@@ -73,9 +73,12 @@ function injectHtml (el, cssPrefix) {
   })
 }
 
-function injectCss (cssPrefix) {
+function injectCss (cssPrefix, transitionDelay) {
   var css = fs.readFileSync(__dirname + '/style.tmpl.css')
-  css = css.toString().replace(/{{prefix}}/g, cssPrefix)
+  css = css
+    .toString()
+    .replace(/{{prefix}}/g, cssPrefix)
+    .replace(/{{transitionDelay}}/g, transitionDelay)
   insertCss(css)
 }
 

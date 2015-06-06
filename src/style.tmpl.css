@@ -33,7 +33,7 @@ body {
   opacity: 0;
   transition-property: opacity, -webkit-transform;
   transition-property: opacity, transform;
-  transition-duration: 3s, 10s;
+  transition-duration: 3s, {{transitionDelay}}ms;
 }
 
 .{{prefix}}--has-kenBurnsFx {
