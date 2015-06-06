@@ -11,12 +11,12 @@ var browserify = require('browserify')
 
 gulp.task('build', function () {
     return browserify({
-        entries: ['src/expose-to-window.js'],
-        debug: true
+        entries: ['src/expose-to-window.js']
     })
         .transform('brfs')
         .bundle()
         .pipe(sourceStream('ken-burns-slideshow.global.min.js'))
         .pipe(buffer())
+        .pipe(uglify())
         .pipe(gulp.dest('dist/'))
 })
