@@ -1,14 +1,22 @@
 var gulp = require('gulp')
 var uglify = require('gulp-uglify')
 var rename = require('gulp-rename')
+var sourceStream = require('vinyl-source-stream')
+var buffer = require('vinyl-buffer')
+var browserify = require('browserify')
+
 
 // Build
 // -----
 
 gulp.task('build', function () {
-    return gulp
-        .src('src/index.js')
-        .pipe(uglify())
-        .pipe(rename('ken-burns-slideshow.min.js'))
+    return browserify({
+        entries: ['src/expose-to-window.js'],
+        debug: true
+    })
+        .bundle()
+        .pipe(sourceStream('ken-burns-slideshow.global.min.js'))
+        .pipe(buffer())
+        // .pipe(rename('ken-burns-slideshow.global.min.js'))
         .pipe(gulp.dest('dist/'))
 })
