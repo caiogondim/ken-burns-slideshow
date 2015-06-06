@@ -1,10 +1,59 @@
 <img src="http://rawgit.com/caiogondim/ken-burns-slideshow/master/img/logo/logo.svg">
 
-# KenburnsSlideshow
+# KenBurnsSlideshow
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+A slideshow in JS with the Ken Burns effect.
+
+## Install
+
+You can install through [npm](//npmjs.com) and use [browserify](//browserify.org) to make it run on the browser.
+```bash
+npm install --save ken-burns-slideshow
+```
+
+Or just download the minified version
+[here](https://raw.githubusercontent.com/caiogondim/ken-burns-slideshow/master/dist/ken-burns-slideshow.global.min.js).
+
+## Usage
+
+Put a list of images on HTML:
+```html
+<ul>
+    <li><img src="http://path-to-your-image"></li>
+    <li><img src="http://path-to-your-image"></li>
+    <li><img src="http://path-to-your-image"></li>
+</ul>
+```
+
+Start the library
+```javascript
+var slideshow = new KenBurnsSlideshow(
+    el: document.querySelector('ul')
+)
+```
+
+## API
+
+### contructor `new KenburnsSlideshow`
+
+Creates in memory a new `KenBurnsSlideshow`. No side effects.
+
+Properties passed on instantiation time
+
+- `props.el`
+  - Type: `HTMLElement`
+  - Required: `true`
+- `props.transitionDelay`
+ - Type: `Number`
+ - Default: 7000
+- `props.cssPrefix`
+  - Type: `String`
+  - Default: 'ken-burns-slideshow'
+
+### `init`
+
+Starts the slideshow behaviour.
+
+### `stop`
+
+Stops the slideshow.
