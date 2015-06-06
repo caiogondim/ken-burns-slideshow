@@ -91,8 +91,13 @@ function randomizeEffectOrigin (el, cssPrefix) {
     var xAxisOrigin = getRandomElement(xAxisOrigins)
     var yAxisOrigin = getRandomElement(yAxisOrigins)
     
-    slide.style.transformOrigin =
-      '' + xAxisOrigin + ' ' + yAxisOrigin
+    if (slide.style.webkitTransformOrigin !== undefined) {
+      slide.style.webkitTransformOrigin =
+        '' + xAxisOrigin + ' ' + yAxisOrigin
+    } else {
+      slide.style.transformOrigin =
+        '' + xAxisOrigin + ' ' + yAxisOrigin
+    }
   })
 }
 
