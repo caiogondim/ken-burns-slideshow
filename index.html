@@ -15,7 +15,7 @@
       height: 100%;
     }
 
-    .slideshow {
+    .ken-burns-slideshow {
       padding: 0;
       margin: 0;
       height: 100%;
@@ -23,7 +23,7 @@
       overflow: hidden;
     }
 
-    .slideshow__slide {
+    .ken-burns-slideshow__slide {
       height: 100%;
       position: absolute;
       left: 50%;
@@ -31,7 +31,7 @@
       overflow: hidden;
     }
 
-    .slideshow__slide-img {
+    .ken-burns-slideshow__slide-img {
       height: 100%;
       opacity: 0;
       transition-property: opacity, -webkit-transform;
@@ -39,7 +39,7 @@
       transition-duration: 3s, 10s;
     }
 
-    .has-kenBurnsFx {
+    .ken-burns-slideshow--has-kenBurnsFx {
       opacity: 1;
       -webkit-transform: scale(1.1);
               transform: scale(1.1);
@@ -49,58 +49,28 @@
 </head>
 <body>
   <ul class="slideshow">
-    <li class="slideshow__slide">
-      <img class="slideshow__slide-img" src="http://lorempixel.com/640/480/sports/1">
+    <li>
+      <img src="http://lorempixel.com/640/480/sports/1">
     </li>
-    <li class="slideshow__slide">
-      <img class="slideshow__slide-img" src="http://lorempixel.com/640/480/sports/2">
+    <li>
+      <img src="http://lorempixel.com/640/480/sports/2">
     </li>
-    <li class="slideshow__slide">
-      <img class="slideshow__slide-img" src="http://lorempixel.com/640/480/sports/3">
+    <li>
+      <img src="http://lorempixel.com/640/480/sports/3">
     </li>
-    <li class="slideshow__slide">
-      <img class="slideshow__slide-img" src="http://lorempixel.com/640/480/sports/4">
+    <li>
+      <img src="http://lorempixel.com/640/480/sports/4">
     </li>
-    <li class="slideshow__slide">
-      <img class="slideshow__slide-img" src="http://lorempixel.com/640/480/sports/5">
+    <li>
+      <img src="http://lorempixel.com/640/480/sports/5">
     </li>
   </ul>
+  <script src="ken-burns-slideshow.js"></script>
   <script>
-    var slides = document.querySelectorAll('.slideshow__slide')
-    var curSlideNum = 0
-
-    slides[0].querySelector('.slideshow__slide-img').classList.add('has-kenBurnsFx')
-
-    // Randomize transform origin
-    var yAxisOrigins = ['bottom', 'center', 'top']
-    var xAxisOrigins = ['left', 'center', 'right']
-
-    function getRandomElement(array) {
-      return array[Math.floor(Math.random() * array.length)]
-    }
-
-    ;[].forEach.call(slides, function(slide) {
-      xAxisOrigin = getRandomElement(xAxisOrigins)
-      yAxisOrigin = getRandomElement(yAxisOrigins)
-      slide.querySelector('.slideshow__slide-img').style.transformOrigin = '' + xAxisOrigin + ' ' + yAxisOrigin
+    var slideshow = new KenBurnsSlideshow({
+      el: document.querySelector('.slideshow')
     })
-
-    function changeSlide(slides) {
-      if (curSlideNum + 1 === slides.length) {
-        curSlideNum = 0
-      } else {
-        curSlideNum += 1
-      }
-
-      document.querySelector('.has-kenBurnsFx').classList.remove('has-kenBurnsFx')
-      slides[curSlideNum].querySelector('.slideshow__slide-img').classList.add('has-kenBurnsFx')
-    }
-
-    //
-    var interval = setInterval(
-      changeSlide.bind(this, slides),
-      5000
-    )
+    slideshow.init()
   </script>
 </body>
 </html>
