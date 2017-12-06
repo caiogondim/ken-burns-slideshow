@@ -1,6 +1,6 @@
 <img src="http://rawgit.com/caiogondim/ken-burns-slideshow/master/img/logo/logo.svg">
 
-# KenBurnsSlideshow
+<h1 align="center">ken-burns-slideshow.js</h1>
 
 A slideshow in JS with the Ken Burns effect.
 
