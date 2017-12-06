@@ -57,3 +57,9 @@ Starts the slideshow behaviour.
 ### `stop`
 
 Stops the slideshow.
+
+---
+
+[caiogondim.com](https://caiogondim.com) &nbsp;&middot;&nbsp;
+GitHub [@caiogondim](https://github.com/caiogondim) &nbsp;&middot;&nbsp;
+Twitter [@caio_gondim](https://twitter.com/caio_gondim)
