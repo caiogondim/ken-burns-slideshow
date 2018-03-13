@@ -1,18 +1,14 @@
 <img src="http://rawgit.com/caiogondim/ken-burns-slideshow/master/img/logo/logo.svg">
 
-<h1 align="center">ken-burns-slideshow.js</h1>
+# ken-burns-slideshow
 
 A slideshow in JS with the Ken Burns effect.
 
 ## Install
 
-You can install through [npm](//npmjs.com) and use [browserify](//browserify.org) to make it run on the browser.
 ```bash
 npm install --save ken-burns-slideshow
 ```
-
-Or just download the minified version
-[here](https://raw.githubusercontent.com/caiogondim/ken-burns-slideshow/master/dist/ken-burns-slideshow.global.min.js).
 
 ## Usage
 
