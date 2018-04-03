@@ -23,9 +23,9 @@ Put a list of images on HTML:
 
 Start the library
 ```javascript
-var slideshow = new KenBurnsSlideshow(
+var slideshow = new KenBurnsSlideshow({
     el: document.querySelector('ul')
-)
+})
 ```
 
 ## API
